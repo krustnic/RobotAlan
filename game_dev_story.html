@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Robot Alan - puzzle game">
+    <meta name="author" content="Aleksandr Mityakov">    
+    <meta name="author" content="Agavalyan Yan">    
+
+    <title>Robot Alan puzzle game</title>
+    
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63273673-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+    body {
+        
+    }    
+        
+    .logo-img {
+        width: 150px;
+        border-radius: 4px;
+    }
+        
+        .top30{
+            margin-top: 30px;
+        }
+        
+        .top15{
+            margin-top: 15px;
+        }
+        
+        .no-top-margin{
+            margin-top: 0;
+        }
+        
+        .no-left-padding {
+            padding-left: 0;
+        }
+        
+        .logo-div{
+            float:left; 
+            padding-right: 20px
+        }
+        
+        .links {
+            margin-top: 48px;
+            font-size: 24px;
+        }
+        
+        .article {
+            margin-top: 30px;
+            font-size: 16px;            
+        }
+    
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container" style="padding-bottom: 100px;">
+ 
+        <div class="logo-div top30 logo">
+            <img src="/images/iTunesArtwork.png" class="logo-img">
+        </div>
+        <div class="top30" class="head">
+            <h1 class="no-top-margin title">Robot Alan</h1>            
+            <div class="support">If you have any questions please contact us: <a href="mailto:avmityakov@gmail.com">avmityakov@gmail.com</a></div>                
+            <div class="pull-right">
+                <a href="https://itunes.apple.com/us/app/robot-alan/id983634444?mt=8"><img id="download" src="/images/appstore.svg" style="width: 277px;"></a>
+            </div>
+            <div class="links"><a href="/game_dev_story.html">Game dev story</a></div>
+       </div>             
+
+       <div class="article">
+           <div class="row">
+               <div class="col-md-12">
+                   <p>
+                       Hello, world! In this post we would like to tell you the story of creation of the mobile game called "Robot Alan", motivated by a simple desire 
+                   to "make a game!". It has resulted in more than three years of making alterations, giving up and starting all over again. 
+                   We’ll try to show you the whole way, and how my friend and I has evolved and changed under influence of this small game. 
+                   </p>                 
+               
+                   <p>
+                       Briefly about us. My name is Alexander and my friend’s name is Jan. In those times (2011) I was mainly engaged in automating some bureaucracy in 
+                   Java and administrating Solaris systems. Accordingly in the future game I was responsible for development. Jan is a creative person with a technical 
+                   background who risked to became an artist (by this let’s assume a general concept of man working with graphics in all its forms), and in our mini-project he 
+                   was responsible for all the images, sounds, animations and others beautiful things. It is worth noting that as I had no experience in the game dev so Jan was 
+                   not a "professional" in his field (in hungry days in University we had created a few web sites, well, who didn’t?!). Nevertheless, we wanted to make the game 
+                   completely by ourselves, without the involvement of others. And we managed it.
+                   </p>                   
+               
+                   <p>
+                       The desire to create a game came long before the concrete idea of the game mechanics. I tried 3 or 4 ideas before I found the one. 
+                       The game is inspired by the school years, 8-9 grades, when we worked in an environment "Robot land" in computer science lessons (this is 
+                       a software for teaching children). In this environment several executors are introduced, one of which is the incomparable "Cucaracha." 
+                       "Cucaracha" is a cockroach located on the two-dimensional field, that is able to follow simple commands like "Move forward, backward, left, 
+                       right, again, if" with the help of which he moved letters. In fact one should make a cockroach construct certain words using these commands. 
+                       A kind of a variation on the Turing machine.
+                   </p>                   
+               </div>
+           </div>
+           
+           <div class="row">
+               <div class="col-md-12">
+                   <p>
+                       <img src="/images/01.png" alt="">
+                   </p>                   
+               </div>
+           </div>
+           
+           <div class="row">
+               <div class="col-md-12">
+                   <p>
+                       Under the influence of nostalgia I wanted to do something similar in the form of a mobile game. I was so inspired that it took me a half of a 
+                       day to implement the game’s prototype. I programmed in Java using libGDX framework (why Java? I thought they’d created minekraft in 
+                       it and that’s quite OK =) )<br/><br/>
+
+                       <div style="text-align:center;">It looked like that :)</div>
+                   </p>                   
+               </div>
+           </div>
+           
+           <div class="row">
+               <div class="col-md-12" style="text-align: center;">
+                   <p>
+                       <img width="600" src="/images/02.png" alt="">
+                   </p>                   
+               </div>
+           </div>
+        
+           <div class="row">
+               <div class="col-md-12">
+                   <p>
+                       The idea of the game is simple. The player collects stars on a level. A level consists of multi-colored blocks. In order to control your 
+                       character you need to create commands in the following form:<br/><br/>
+                   </p>
+                   
+                   <p style="text-align: center;">
+                       <b>IF</b> &lt;above, below, on left, on right&gt; &lt;RED, GREEN&gt; <b>THEN MOVE</b> &lt;LEFT, RIGHT, DOWN, UP&gt;<br/><br/>
+                   </p>
+                   <p>
+                       The gameplay was tested and we liked it very much (it’s not surprising, there were so much endorphins in my blood that I could had made a 
+                       religion of tic tac toe). After that we had to come up with a character and its environment. Curiosity then just was about to get to Mars 
+                       and we decided - “well, that's a great theme: Mars rover! And we may release the game for the important event!” (This was the first mistake 
+                       with a deadline - for about 3 years).
+
+                   </p>                   
+               
+                    <p>
+                        Under the influence of nostalgia I wanted to do something similar in the form of a mobile game.<br/><br/>
+                        I was so inspired that it took me a half of a day to implement the game’s prototype. I programmed in Java using libGDX framework 
+                        (why Java? I thought they’d created minekraft in it and that’s quite OK =) )<br/><br/>                    
+                    </p>                   
+                
+                    <p>
+                        So a prototype of a Mars rover was designed, later known as the "vacuum cleaner". Not only because it was similar to a modern 
+                        "smart" vacuum cleaner, but also because Jan produced a trailer where the "cleaner" was moving against all the laws of physics 
+                        (note the direction of the tracks and the surface). For comparison, the very first and the final versions:                    
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/test_3.gif" alt="">
+                        <img src="/images/test_4.gif" alt="">
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Of course, now it looks very funny but then it seemed like we just had to change few details.<br/><br/>
+                        Meanwhile the development of the game continued. Android smartphones were chosen as the target platform, even though we didn’t have one. 
+                        But the opportunity of libGDX to develop a common desktop application and then just built it for Android was very encouraging. 
+                        So we thought we would find the device when needed. Our naivete became clear only when I tried to built the game on a friend’s smartphone. 
+                        Instead of 2.5k fps on desktop there were 17 fps on a top smartphone of that time. Of course it was connected with the lack of experience 
+                        in a game dev. There were a lot of things to be optimized (at least render only the viewport instead of the entire game). After optimization 
+                        I achieved 60 fps on the same smartphone, but it became clear that further game development without a device was very silly.                   
+                    </p>                   
+                
+                    <p>
+                        As soon as I launched our game on the tablet I realized that it looked much cooler on that screen (as much as 7 inches :) )! 
+                        It became a possession and led to almost a complete redesign of the game (extension of the play field, design and mechanics of the game). 
+                        It should be noted that all my proposals to rewrite the game Jan acclaimed enthusiastically. Maybe because I vividly described how it would 
+                        be cooler, or he just knew that what we had then is not what we wanted to share with others.               
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/03-mini.png" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        By then we almost run out of motivation. In good months I managed to devote the game a couple of days. The main motivator was the renewed art of Jan.
+                        <br/><br/>
+                        We needed a change, a breath of fresh air. A purchase of my first iPad (2) became this change. It was much more productive then Samsung 
+                        and ofcourse we wanted to run our game on it. From the very beginning of LibGDX its creators promised to implement the possibility of 
+                        compiling java games on iOS (via Mono) in the future, but then it hadn’t been done yet (as far as I know, now it is). No possibility, 
+                        but I really wanted to - so I started to look towards Objective-C. I played with it for three days, with reference to the cocos2d. I made 
+                        the most basic prototype and realized that it didn’t bring me any pleasure. I didn’t like the language and didn’t have a desire to study it. 
+                        Partly it was because I realized that the only way I was going to use it was particularly for this game.
+                    </p>                   
+                
+                    <p>
+                        Then I stumbled on CocoonJS. It is a commercial product that allows you to pack HTML/JS game developed on Canvas in iOS application 
+                        with performance "close" to the native. An  analogue of PhoneGap but for graphics. There is also an open source version of this tool called 
+                        "Ejecta" but I decided that since CocoonJS is a commercial product the quality is likely to be better. In addition it was a beta and free.
+                    </p>                   
+                
+                    <p>
+                        The times of rewriting the game in JavaScript began. I knew JavaScript a little, I would characterize my knowledge as "jQuery - that's all 
+                        I need." It took me three days to write almost a complete analog of java version (it turned out that it’s much more faster when you know 
+                        what to implement and have all the images, sprites and other stuff). I became more and more interested in JavaScript language as I was 
+                        developing the game. After C and Java World all it’s features like special behavior of ‘this’, prototypes, closures 
+                        and (NaN! == NaN) == true - became a kind of puzzle that made it very interesting to study. I chose CAAT JS as a framework for the game. 
+                        As far as I'm concerned now this is not the most famous and popular framework but then guys from CocoonJS promoted 
+                        it (they must have something to do with its development). The framework is very simple and solved all the problems for us (luckely there 
+                        is nothing supernatural in our game).
+                        <br/><br/>
+                        After that once I decided to rewrite the game using generators in ES6. Fortunately I didn’t have enough time for that so I 
+                        got lukewarm and decided we would produce the game faster ‘as is’.
+                    </p>                   
+                </div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/05.png" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        But it turned out quite different. This time Jan became an initiator. He had watched the cartoon "WALL E" and was inspired by 
+                        the contrast of technology and nature.<br/>
+                        After discussion we decided that it was necessary to add this contrast in the game and this led to the various green elements in the menu:
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/06.png" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        In addition to that Jan decided to try his hand in 3D modeling. So a prototype of our character, later called a "chair", was created:
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/07.jpg" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Jan began studying 3D which he found really fascinating and it led to a series of new versions of our robot:
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/08.jpg" width="800" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        In addition to changing the graphical part of the game it changed the direction of our thoughts. Previously we tried to diversify 
+                        the game and to add new features (lasers, portals and many other different kinds of garbage), but then a full minimalism overcame us. 
+                        We cut almost all the elements that seemed even a little far-fetched that made the game more "holistic". The refusal of  text in the 
+                        game became the apogee of minimalism. The only text is our names and the old-school phrase "GAME OVER". Such a zealous minimalism made 
+                        the game much less clear for the ones who are not yet familiar with it, but we felt some inner satisfaction in that way.
+                    </p>                   
+                
+                    <p>
+                        Our friends whom we showed the game treated it differently. In general everyone liked it but for most people, especially non-technical ones, 
+                        it was not very clear. Certainly it has brought the shade of sadness, but those who liked it changed the situation. As a result, 
+                        we've added the first few training levels. The final version of the game is still not the ideal which is somewhere in our imagination, 
+                        but it is something that we don’t shame to show others.
+                    </p>                   
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p>
+                        <img src="/images/09-mini.png" width="800" alt="">                        
+                    </p>                   
+                </div>
+            </div>
+        
+            <legend>In conclusion</legend>
+        
+            <div class="row">
+                <div class="col-md-12">                
+                    <p>
+                        We reworked the game very often because of various reasons: new technologies, new colors and new ideas. Without these alterations 
+                        the game would had never been born. As for us, the progress of Jan I think is particularly noticible in the contrast of his first 
+                        works and the result. Now Jan is seriously engaged in 3D-animation and works in one of St. Petersburg's studio as an animator. I migrated 
+                        from backend to frontend: now I work as a senior developer and program mainly on JavaScript.
+                        <br/><br/>
+                        The game has brought us not only the experience but also many pleasant memories and knowledge about new areas for personal development.
+                        <br/><br/>
+                        Of course, the game is not a masterpiece. Its main value will probably remains between us, but it would be great if there is someone 
+                        who likes to play it =).
+                        <br/><br/>
+                        Thanks for your attention!
+                    </p>                   
+                </div>
+            </div>
+        
+       </div>
+        
+    </div>
+    <!-- /.container -->
+
+    <div id="content">
+        
+    </div>
+
+</body>
+
+</html>
